@@ -6,11 +6,11 @@ fashnoid.config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/home.html',
-        controller: 'HomeCtrl'
+        controller: 'MainCtrl'
       })
-      .when('/pdt', {
-        templateUrl: 'views/view2.html',
-        controller: 'PdtCtrl'
+      .when('/productPrice', {
+        templateUrl: 'views/productPrice.html',
+        controller: 'ProductPriceCtrl'
       }) 
       .otherwise({
         redirectTo: '/'

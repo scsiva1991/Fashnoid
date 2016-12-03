@@ -12,13 +12,51 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
+  <link href="static/css/style.css" rel="stylesheet">
+  <link href="static/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,600i" rel="stylesheet">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="static/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+  <script src="static/js/home-slider.js" type="text/javascript"></script>
+  <script src="static/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="static/js/fas-our.js" type="text/javascript"></script> 
+
 </head>
-<body>
-  <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul>
+<body> 
+   <header>
+        <div class="top-sm-menu">
+            <div class="container top-sm-menu-inner">
+                <div class="top-sm-left">
+                    <a href="javascript:void(0)">Top Fashion Online Store</a>
+                </div>
+                <div class="top-sm-right">
+                    <a href="javascript:void(0">Sellers</a>
+                    <a href="javascript:void(0">Customer Care</a>
+                    <a href="javascript:void(0">Track Order</a>
+                    <a href="javascript:void(0">Sign Up</a>
+                </div>
+            </div>
+        </div>
+        <div class="container main-header-menu">
+            <div class="logo-top">
+                <a href="home.html">
+                    <img src="static/images/fashnoid-logo.png"/>
+                </a>
+            </div>
+            <div class="top-search">
+                <input type="text" placeholder="Search Cloths, Fashion Dress, Men & Womans Wears"/>
+                <button><i class="mdi mdi-magnify"></i>Search</button>
+            </div>
+            <div class="top-login-btn">
+                <div class="menu-cart-inner">
+                    <a href="javascript:void(0)"><span>Cart</span><i class="mdi mdi-cart-plus"></i> <span>0</span></a>
+                    <a href="javascript:void(0)" data-target="#login-signup" data-toggle="modal"><span>Log In</span><i class="mdi mdi-login-variant"></i></a>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </header>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -28,6 +66,51 @@
 
   <div>Angular seed app: xxxxxxxxxxxxx<span app-version></span></div>
 
+   <div class="modal fade in" id="login-signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="MainCtrl" >
+    <div class="modal-dialog" role="document">
+        <div class="log-sign-popup">
+            <div class="log-sign-banner">
+            </div>
+            <div class="log-sign-form log-in-cont">
+                <h1>Login </h1><a href="#" class="pup-close" data-dismiss="modal"><i class="mdi mdi-close"></i></a>
+                <div class="log-sign-field">
+                    <input  type="email" placeholder="EmailID"  ng-model="user.email">
+                </div>
+                <div class="log-sign-field">
+                    <input type="password" placeholder="Enter Password" ng-model="user.password">
+                </div>
+                <div class="log-sign-field">
+                    <button class="login-btn" ng-click="login()">Login</button>
+                </div>
+                <div class="log-sign-field">
+                    <button class="sign-btn ne-sig">New User Signup Here</button>
+                </div>
+            </div>
+            <div class="log-sign-form sig-up-cont">
+                <h1>SignUp</h1>
+                <div class="log-sign-field">
+                    <input type="text" placeholder="Full Name" ng-model="user.firstName">
+                </div>
+                <div class="log-sign-field">
+                    <input  type="email" placeholder="Email ID" ng-model="user.email">
+                </div>
+                <div class="log-sign-field">
+                    <input type="text" placeholder="Mobile No" ng-model="user.phone">
+                </div>
+                <div class="log-sign-field">
+                    <input type="password" placeholder="Enter Password" ng-model="user.password">
+                </div>
+                <div class="log-sign-field">
+                    <button class="login-btn" ng-click="signUp()">SignUp</button>
+                </div>
+                <div class="log-sign-field">
+                    <button class="sign-btn old-log" >Already Have Login Here</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
@@ -35,5 +118,11 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script> 
   <script src="scripts/controllers/MainController.js"></script> 
+  <script src="scripts/controllers/ProductPriceController.js"></script>
+  <script src="scripts/services/UserService.js"></script> 
+  <script src="static/js/masonry.pkgd.min.js" type="text/javascript"></script>
+  <script src="static/js/imagesloaded.js" type="text/javascript"></script>
+  <script src="static/js/classie.js" type="text/javascript"></script>
+  <script src="static/js/AnimOnScroll.js" type="text/javascript"></script>
 </body>
 </html>
