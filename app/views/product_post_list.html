@@ -1,0 +1,47 @@
+<header>
+    <div class="top-sm-menu">
+        <div class="container top-sm-menu-inner">
+            <div class="top-sm-left">
+                <a href="javascript:void(0)">Top Fashion Online Store</a>
+            </div>
+            <div class="top-sm-right">
+                <a href="javascript:void(0)">Sellers</a>
+                <a href="javascript:void(0)">Customer Care</a>
+                <a href="javascript:void(0)">Track Order</a>
+                <a href="" class="profile-link" ng-click="showDiv = !showDiv">{{user.firstName}} <i class="mdi mdi-menu-down"></i></a>
+                <div class="pro-submenu" ng-show="!!showDiv">
+                    <ul>
+                        <li><a href="javascript:void(0)"  class="sub-menu-text" >Account</a></li>
+                        <li><a href="javascript:void(0)"  class="sub-menu-text">My Profile</a></li>
+                        <li><a href="javascript:void(0)"  class="sub-menu-text">Setting</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container main-header-menu">
+        <div class="logo-top">
+            <a href="home.html">
+                Fashnoid
+            </a>
+        </div>
+        <div class="top-search">
+            <input type="text" placeholder="Search Cloths, Fashion Dress, Men & Womans Wears"/>
+            <button><i class="mdi mdi-magnify"></i>Search</button>
+        </div>
+        <div class="top-login-btn">
+            <div class="menu-cart-inner">
+                <a href="javascript:void(0)"><span>Cart</span><i class="mdi mdi-cart-plus"></i> <span>0</span></a>
+                <a href="javascript:void(0)" data-target="#login-signup" data-toggle="modal"><span>Log In</span><i class="mdi mdi-login-variant"></i></a>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</header>
+<section> 
+   
+                
+
+            <div dynamic-layout items="cards" filters="filters" rankers="rankers"></div> 
+</section>

@@ -59,10 +59,11 @@ table {
     font-size:14px;
 }
 header{
-    background-color: #fcf2fb;
+    background-color: #9c389c;
     float: left;
     width: 100%;
-    /*    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);*/
+    background-image: url(../images/Pattel.png);
+    background-position: -5px;
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -75,7 +76,7 @@ header{
 .top-sm-menu{
     width: 100%;
     height: 30px;
-    background-color: #fcf2fb;
+    /*    background-color: #fcf2fb;*/
 }
 .top-sm-menu-inner{
     height: 30px;
@@ -86,7 +87,7 @@ header{
 .top-sm-left a{
     font-size:12px;
     text-decoration:none;
-    color:#4356a5;
+    color:#ffffff;
     float:left;
     padding: 8px;
     box-sizing: border-box;
@@ -99,15 +100,17 @@ header{
     font-size:12px;
     text-decoration:none;
     float:left;
-    color:#4356a5;
+    color:#ffffff;
     padding: 8px;
     box-sizing: border-box;
 }
 .main-header-menu{
     height: 60px;
+    position: relative;
 }
 .logo-top{
     float: left;
+    height: 60px;
     width: 20%;
     padding: 5px;
     box-sizing: border-box;
@@ -122,7 +125,9 @@ header{
     font-style: italic;
 }
 .logo-top a img{
-    width:50%;
+    width: 95px;
+    position: absolute;
+    top: 0px;
 }
 .top-search{
     width: 60%;
@@ -316,7 +321,7 @@ a.control_next {
     padding:10px 0;
 }
 .cart-box{
-    width: 32%;
+    /*width: 32%;*/
     min-height: 200px;
     background-color: #ffffff;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
@@ -344,7 +349,7 @@ a.control_next {
     border-radius: 50%;
 }
 .prof-name{
-    float: left;
+    /*float: left;*/
     width: 80%;
     padding: 5% 5% 0;
     box-sizing: border-box;
@@ -467,7 +472,7 @@ a.control_next {
 footer{
     width: 100%;
     float: left;
-    background-color: #fcf2fb;
+    background-color: #9c389c;
     border-top: 1px solid #d87b06;
     padding: 20px 0;
 }
@@ -479,7 +484,7 @@ footer{
 .footer-menu-cont h2{
     font-size: 14px;
     font-weight: 500;
-    color: #4356a5;
+    color: #ffffff;
     padding-bottom: 7px;
     text-transform: uppercase;
 }
@@ -489,12 +494,12 @@ footer{
     float: left;
 }
 .footer-menu-cont ul li a{
-    color: #4356a5;
+    color: #ffffff;
     font-size:12px;
     text-decoration:none;
 }
 .footer-menu-cont ul li a:hover{
-    color:#5d6fb7;
+    color:#e6e6e6;
     text-decoration:underline;
 }
 .footer-sub-menu{
@@ -1038,8 +1043,8 @@ footer{
     padding:10px 0;
 }
 .cart-item-box{
-    width: 32%;
-    min-height: 200px;
+    /*width: 32%;*/
+    min-height: 200px; 
     background-color: #ffffff;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
     float: left;
@@ -1066,7 +1071,7 @@ footer{
     border-radius: 50%;
 }
 .item-prof-name{
-    float: left;
+    /*float: left;*/
     width: 80%;
     padding: 5% 5% 0;
     box-sizing: border-box;
@@ -1621,14 +1626,14 @@ a.profile-link:hover .pro-submenu{
     display:block;
 }
 .pro-submenu{
-    display:none;
+    /*display:none;*/
     background-color: #ffffff;
     border: 1px solid #dddddd;
     position: absolute;
     z-index: 999;
     top: 25px;
     right: 10px;
-    width: 140px;
+    width: 140px; 
 }
 .pro-submenu ul li{
     float:left;

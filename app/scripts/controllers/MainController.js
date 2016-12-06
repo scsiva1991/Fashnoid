@@ -1,8 +1,5 @@
-fashnoid.controller('MainCtrl', function($scope, $location, UserService) {
-   console.log('--------');
-   $scope.name="siva";
-    console.log('------$scope --', $scope);
-
+fashnoid.controller('MainCtrl', function($scope, $location, UserService, $rootScope) {
+   
 	$scope.user = {
 		"isActive": false,
 		"userType": "FASHION_FREEK",
@@ -16,7 +13,24 @@ fashnoid.controller('MainCtrl', function($scope, $location, UserService) {
  			console.log( ' response ',response);
 			if( response.status == 200 ) {
 				$('#login-signup').modal('toggle');
-				$location.path('/productPrice');
+				$location.path('/productDisplay');
+				$rootScope.user = response.data;
+			} else {
+				alert(response.data.error.message);
+			}
+			 
+	    });
+		
+	};
+
+	$scope.login = function() {
+		var result = UserService.login($scope.user);
+		result.then(function(response) {  
+ 			console.log( ' response ',response);
+			if( response.status == 200 ) {
+				$('#login-signup').modal('toggle');
+				$rootScope.user = response.data;
+				$location.path('/productDisplay');
 			} else {
 				alert(response.data.error.message);
 			}

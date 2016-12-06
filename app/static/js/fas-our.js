@@ -7,13 +7,13 @@ $(document).ready(function(){
         $('.log-in-cont').show('slow');
         $('.sig-up-cont').hide('slow');
     })
-    $('.profile-link').click(function(event){
+    /*$('.profile-link').click(function(event){
         event.stopPropagation();
         $('.pro-submenu').show();
     })
     $(document).click(function(){
         $('.pro-submenu').hide();
-    })
+    })*/
 //    $('.second-pr-list li').mouseover(function(){
 //        $('.second-pr-list > li > div').show();
 //    })
