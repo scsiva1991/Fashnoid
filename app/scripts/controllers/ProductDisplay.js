@@ -1,9 +1,9 @@
 fashnoid.controller('ProductDisplayCtrl', function($scope, $location, ProductService, $rootScope ) {
 console.log('----  $rootScope----',  $rootScope); 
    $scope.user = $rootScope.user;
-   $scope.productList = ProductService.getAllProducts();
+  // $scope.productList = ProductService.getAllProducts();
 
-   $scope.productList.then(function(response) {  
+   /*$scope.productList.then(function(response) {  
 		console.log( ' response ',response);
 		var pdtList = [];
 	    for( var i = 0; i < response.data.length; i++) {
@@ -26,7 +26,7 @@ console.log('----  $rootScope----',  $rootScope);
 	     
 	    $scope.cards = pdtList;
 		 
-    });
-   console.log('----$scope.cards----', $scope.cards); 
+    });*/
+  // console.log('----$scope.cards----', $scope.cards); 
    	
 });

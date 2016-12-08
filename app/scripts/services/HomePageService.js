@@ -1,4 +1,4 @@
-fashnoid.service('UserService', function($http, ApiConstants) { 
+fashnoid.service('HomePageService', function($http, ApiConstants) { 
 
     this.signUp = function (user) {  
     	return $http.post(ApiConstants.BaseUrl+'user/signup', user).then(function successCallback(response) {
