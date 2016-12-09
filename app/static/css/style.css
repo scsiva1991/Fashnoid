@@ -67,7 +67,7 @@ header{
     box-sizing: border-box;
     position: fixed;
     top: 0;
-    z-index: 99999;
+    z-index: 1050;
 }
 .container{
     width:1250px;
@@ -753,13 +753,14 @@ footer{
 .product-preview-cont{
     z-index: 4;
     float: left;
-    width: 512px;
+    width: 49%;
     height: auto;
     position: relative;
     min-height: 1px;
+    padding-right: 10px;
 }
 .product-info-cont{
-    width: calc(100% - 520px);
+    width: 50%;
     float: right;
 }
 .product-preview-inner{
@@ -779,11 +780,12 @@ footer{
     border: 1px solid #e0e0e0;
 }
 .product-preview-full{
-    width: calc(100% - 70px);
+    width: calc(100% - 80px);
     float:left;
 }
 .product-preview-full img{
     width: 100%;
+    border: 1px solid;
 }
 .product-profile{
     width: 100%;
@@ -2134,4 +2136,50 @@ a.profile-link:hover .pro-submenu{
 .trck-info-mouse-over li:last-child{
     border-right:0;
     width:50%;
+}
+.mens-menu{
+    font-size:14px;
+}
+.main-sub-menu-inner a.mens-menu:hover + .men-categori-list, .men-categori-list:hover{
+    display:block
+}
+.men-categori-list{
+    display:none;
+    background: #ffffff;
+    background: #ffffff;
+    position: absolute;
+    top: 125px;
+    left: 130px;
+    width: 500px;
+    height: 500px;
+    z-index: 9999;
+}
+.men-cat-list{
+    width:50%;
+    float:left;
+}
+.men-cat-list ul{
+    width:100%;
+    float:left;
+    padding:10px;
+}
+.men-cat-list ul li a{
+    width: 100%;
+    float: left;
+    font-size: 12px;
+    padding: 5px;
+    text-transform: capitalize;
+}
+.men-cat-list h3{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px;
+}
+.product-detail-view {
+    padding-top: 4%;
+}
+
+ /*Change the colour*/
+.active img{
+    border:2px solid #9c389c !important;
 }

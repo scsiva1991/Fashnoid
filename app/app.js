@@ -16,6 +16,26 @@ fashnoid.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'views/home.html',
         controller: 'MainCtrl'
       })
+      .when('/profileView', {
+        templateUrl: 'views/profile_view.html',
+        controller: 'ProfileViewCtrl'
+      })
+      .when('/viewcart', {
+        templateUrl: 'views/view_cart.html',
+        controller: 'CartCtrl'
+      })
+      .when('/myorders', {
+        templateUrl: 'views/myorders.html',
+        controller: 'CartCtrl'
+      })
+      .when('/trackOrder', {
+        templateUrl: 'views/order_tracking.html',
+        controller: 'OrderTrackCtrl'
+      })
+      .when('/productDetailView', {
+        templateUrl: 'views/product_detail_view.html',
+        controller: 'OrderTrackCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
