@@ -1,7 +1,7 @@
 fashnoid.service('HomePageService', function($http, ApiConstants) { 
 
-    this.signUp = function (user) {  
-    	return $http.post(ApiConstants.BaseUrl+'user/signup', user).then(function successCallback(response) {
+    this.getMostLikedItems = function() {
+    	return $http.get(ApiConstants.BaseUrl+'homePage/getLayoutProducts').then(function successCallback(response) {
 		     console.log('---- success response ----', response);
 		     return response;
 		  }, function errorCallback(response) {
@@ -10,13 +10,5 @@ fashnoid.service('HomePageService', function($http, ApiConstants) {
 		});
     };
 
-    this.login = function (user) {  
-    	return $http.post(ApiConstants.BaseUrl+'user/login', user).then(function successCallback(response) {
-		     console.log('---- success login response ----', response);
-		     return response;
-		  }, function errorCallback(response) {
-		    console.log('---- error login response ----', response);
-		    return response;
-		});
-    };
+   
 });

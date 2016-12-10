@@ -16,51 +16,71 @@
 </div>
 <div class="cart-home-container">
   <div class="container cart-home-inner">
-      <div class="cart-box">
+      <div class="cart-box" ng-repeat="item in cards">
           <div class="cart-profile">
-              <div class="cart-pro-img"><img src="static/images/pro-1.png"></div>
+              <div class="cart-pro-img"><img ng-src="{{item.owner.profile}}"></div>
               <div class="prof-name">
-                  <span class="pro-name">Shashank Kaushik</span>
-                  <span class="post-time">11hr</span>
+                  <span class="pro-name">{{item.owner.fullName}}</span>
+                  <span class="post-time"> 11 hrs </span>
               </div>
           </div>
           <div class="cart-img-conter">
-              <img src="static/images/dr2.jpg"/>
+              <img ng-src="{{item.image}}"/>
           </div>
           <div class="cart-desc">
-              <span>#Grenada #Guatemala #Guinea #Guinea-Bissau #Guyana #HongKong #Iceland #Indonesia #Iran #Iraq #Ireland #Israel #Italy #Jamaica #Japan #Jordan #Laos #Latvia #Lebanon #Lesotho #Liberia #Libya #Liechtenstein #Lithuania #Morocco #Mozambique #Mauritania #Mauritius #Mexico #NewZealand #Oman #Philippines #Syria #Tanzania #Tunisia #Turkey #UnitedArabEmirates</span>
+              <span>{{item.description}}</span>
           </div>
           <div class="cart-social-cont">
-              <a href=""><i class="mdi mdi-heart"></i><span>854</span></a>
+              <a href=""><i class="mdi mdi-heart"></i><span>{{item.likeCount}}</span></a>
               <a href=""><i class="mdi mdi-share-variant"></i><span>1K</span></a>
-              <a href=""><i class="mdi mdi-comment"></i><span>300</span></a>
+              <a href=""><i class="mdi mdi-comment"></i><span>{{item.commentCount}}</span></a>
               <a href="" class="cart-soc-foll"><i class="mdi mdi-account-plus"></i></a>
               <a href=""><i class="mdi mdi-eye"></i><span>2.5K</span></a>
           </div>
       </div>
-      
-      <div class="cart-box">
-          <div class="cart-profile">
-              <div class="cart-pro-img"><img src="static/images/pro-1.png"></div>
-              <div class="prof-name">
-                  <span class="pro-name">Shashank Kaushik</span>
-                  <span class="post-time">11hr</span>
-              </div>
-          </div>
-          <div class="cart-img-conter">
-              <img src="static/images/dr4.jpg"/>
-          </div>
-          <div class="cart-desc">
-              <span>#Grenada #Guatemala #Guinea #Guinea-Bissau #Guyana #HongKong #Iceland #Indonesia #Iran #Iraq #Ireland #Israel #Italy #Jamaica #Japan #Jordan #Laos #Latvia #Lebanon #Lesotho #Liberia #Libya #Liechtenstein #Lithuania #Morocco #Mozambique #Mauritania #Mauritius #Mexico #NewZealand #Oman #Philippines #Syria #Tanzania #Tunisia #Turkey #UnitedArabEmirates</span>
-          </div>
-          <div class="cart-social-cont">
-              <a href=""><i class="mdi mdi-heart"></i><span>854</span></a>
-              <a href=""><i class="mdi mdi-share-variant"></i><span>1K</span></a>
-              <a href=""><i class="mdi mdi-comment"></i><span>300</span></a>
-              <a href="" class="cart-soc-foll"><i class="mdi mdi-account-plus"></i></a>
-              <a href=""><i class="mdi mdi-eye"></i><span>2.5K</span></a>
-          </div>
-      </div>
+      <div class="cart-item-box" ng-repeat="item in products">
+        <div class="cart-item-profile">
+            <div class="cart-item-pro-img"><img ng-src="{{item.owner.profile}}"></div>
+            <div class="item-prof-name">
+                <span class="pro-item-name"> {{item.owner.fullName}} </span>
+                <span class="post-item-time"> 11 hrs </span>
+            </div>
+        </div>
+        <div class="cart-item-img-conter">
+            <div class="cart-item-small">
+              <img src="static/images/dr1.jpg"/>
+              <img src="static/images/dr1.jpg"/>
+              <img src="static/images/dr1.jpg"/>
+              <img src="static/images/dr1.jpg"/>
+              <img src="static/images/dr1.jpg"/>
+            </div>
+            <div class="cart-full-image">
+              <img src="static/images/dr1.jpg"/>
+            </div>
+        </div>
+        <div class="item-cart-pro-info-det">
+            <h1> {{item.productName}} </h1>
+            <div class="item-cart-rating-cont">
+                <span class="item-cart-rate-info">2.5 <i class="mdi mdi-star"></i></span>
+            </div>
+            <div class="item-cart-price-cont">
+                <span class="item-cart-pro-current">₹ {{item.price}}</span>
+                <span class="item-cart-pro-org">₹ {{item.originalAmount}}</span>
+                <span class="item-cart-pro-offr">{{item.offerPercentage}} % Off</span>
+            </div>
+            <div class="item-size-cont">
+                <span class="item-size-label">Size</span><span class="item-size-val">XXL,XL, L, M</span>
+            </div>
+            <div class="item-size-cont">
+                <span class="item-size-label">Color</span><span class="item-size-val"><i class="mdi mdi-checkbox-blank blue"></i> <i class="mdi mdi-checkbox-blank red"></i> <i class="mdi mdi-checkbox-blank crimson"></i></span>
+            </div>
+        </div>
+        <div class="cart-item-social-cont">
+            <a href=""><i class="mdi mdi-heart"></i><span> {{item.likeCount}}</span></a>
+            <a href=""><i class="mdi mdi-eye"></i><span>3.5K</span></a>
+            <a href="" class="cart-buy">Buy</a>
+        </div>
+      </div> 
       
   </div>
 </div>
