@@ -32,6 +32,10 @@ fashnoid.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'views/order_tracking.html',
         controller: 'OrderTrackCtrl'
       })
+      .when('/professionals/:professionalType', {
+        templateUrl: 'views/professionals.html',
+        controller: 'ProfessionalCtl'
+      })
       .when('/productDetailView', {
         templateUrl: 'views/product_detail_view.html',
         controller: 'OrderTrackCtrl'
