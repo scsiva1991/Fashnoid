@@ -29,4 +29,24 @@ fashnoid.service('UserService', function($http, ApiConstants) {
 		    return response;
 		});
     }
+
+    this.getClosetItems = function(userId, limit, offset) {
+    	return $http.post(ApiConstants.BaseUrl+'closet/getByUser/'+userId).then(function successCallback(response) {
+		     console.log('---- success login response ----', response);
+		     return response;
+		  }, function errorCallback(response) {
+		    console.log('---- error login response ----', response);
+		    return response;
+		});
+    }
+
+    this.getCartItems = function(userId) {
+    	return $http.get(ApiConstants.BaseUrl+'cartItem/getCarts/'+userId).then(function successCallback(response) {
+		     console.log('---- success login response ----', response);
+		     return response;
+		  }, function errorCallback(response) {
+		    console.log('---- error login response ----', response);
+		    return response;
+		});
+    }
 });

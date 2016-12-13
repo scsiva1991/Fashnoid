@@ -174,7 +174,7 @@ header{
     width:20%;
 }
 .menu-cart-inner{
-    float:right;
+   /* float:right;*/ /* Changed by login button remove action*/
 }
 .top-login-btn a{
     display: block;

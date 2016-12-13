@@ -10,5 +10,13 @@ fashnoid.service('HomePageService', function($http, ApiConstants) {
 		});
     };
 
+    this.getCartCounts = function(userId) {
+    	return $http.get(ApiConstants.BaseUrl+'cartItem/getCartItems/'+userId).then(function successCallback(response) {
+		     return response;
+		  }, function errorCallback(response) {
+		    return response;
+		});
+    };
+
    
 });

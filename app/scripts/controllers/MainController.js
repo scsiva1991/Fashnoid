@@ -1,4 +1,4 @@
-fashnoid.controller('MainCtrl', function($scope, $location, UserService, HomePageService, $rootScope) {
+fashnoid.controller('MainCtrl', function($scope, $location, UserService, SessionService, HomePageService, $rootScope) {
    
 	$scope.user = {
 		"isActive": false,
@@ -6,6 +6,30 @@ fashnoid.controller('MainCtrl', function($scope, $location, UserService, HomePag
 		"emailVerified": false,
 		"phoneVerified": false
 	}
+
+	$rootScope.cartItemLength = 0;
+	$rootScope.showSignup = 'true';
+
+	if(SessionService.isKeyAvailable('FU_G')) {
+		console.log('User --- ',SessionService.getObject(SessionService.getObject('FU_G')));
+		$rootScope.user = JSON.parse(SessionService.getObject(JSON.parse(SessionService.getObject('FU_G'))));
+		$rootScope.cartItemLength = HomePageService.getCartCounts($rootScope.user.userId);
+	} 
+	$rootScope.cartItemLength .then(function(response) {
+		if(response.status == 200 ) {
+			$rootScope.cartItemLength = response.data;
+		} else {
+			$rootScope.cartItemLength = 0;
+		}
+	});
+
+	if($rootScope.user != null) {
+		$rootScope.showSignup = 'false';
+
+	}
+
+	
+
 
 	$scope.mostLikedItems = HomePageService.getMostLikedItems();
 	$scope.mostLikedItems.then(function(response) { 
@@ -20,7 +44,6 @@ fashnoid.controller('MainCtrl', function($scope, $location, UserService, HomePag
 		    	data.commentCount = response.data.posts[i].comments.length;
 		    	data.likeCount = response.data.posts[i].likes.length;
 		    	var userObj = JSON.parse(response.data.posts[i].ownerId);
-		    	console.log('User information ---- ',userObj);
 		    	var user = {};
 		    	user.profile = userObj.imageUrl;
 		    	user.fullName = userObj.firstName +' '+userObj.lastName;
@@ -45,7 +68,6 @@ fashnoid.controller('MainCtrl', function($scope, $location, UserService, HomePag
 		    	data.likes = response.data.products[i].likes;
 		    	data.likeCount = response.data.products[i].likes.length;
 		    	var userObj = JSON.parse(response.data.products[i].sellerId);
-		    	console.log('User information ---- ',userObj);
 		    	var user = {};
 		    	user.profile = userObj.imageUrl;
 		    	user.fullName = userObj.firstName +' '+userObj.lastName;
@@ -72,14 +94,15 @@ fashnoid.controller('MainCtrl', function($scope, $location, UserService, HomePag
  			console.log( ' response ',response);
 			if( response.status == 200 ) {
 				$('#login-signup').modal('toggle');
+				$rootScope.showSignup = 'false';
 				$location.path('/homepage');
+				SessionService.setObject('FU_G', response.data.userId);
+				SessionService.setObject(response.data.userId, response.data);
 				$rootScope.user = response.data;
 			} else {
 				alert(response.data.error.message);
 			}
-			 
 	    });
-		
 	};
 
 	$scope.login = function() {
@@ -87,8 +110,11 @@ fashnoid.controller('MainCtrl', function($scope, $location, UserService, HomePag
 		result.then(function(response) {  
  			console.log( ' response ',response);
 			if( response.status == 200 ) {
+				$rootScope.showSignup = 'false';
 				$('#login-signup').modal('toggle');
 				$rootScope.user = response.data;
+				SessionService.setObject('FU_G', response.data.userId);
+				SessionService.setObject(response.data.userId, response.data);
 				$location.path('/homepage');
 			} else {
 				console.log("login failed");
@@ -98,4 +124,5 @@ fashnoid.controller('MainCtrl', function($scope, $location, UserService, HomePag
 	    });
 		
 	};
+
 });
